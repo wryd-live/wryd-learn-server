@@ -1,0 +1,10 @@
+language: go
+
+go:
+  - tip
+
+before_install:
+  - go get github.com/wryd-live/wryd-learn-server/server/main
+script:
+  - cd $GOPATH/src/github.com/wryd-live/wryd-learn-server/server/main
+  - make
