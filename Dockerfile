@@ -82,10 +82,10 @@ acl_file /data/mosquitto_config/acl\n\
 password_file /data/mosquitto_config/passwd\n\
 pid_file /data/mosquitto_config/pid\n'\
 > /app/mosquitto_config/mosquitto.conf && \
-	echo "moving to find3" && cd /build/find3/server/main  && go build -v && \
-	echo "moving main" && mv /build/find3/server/main /app/main && \
-	echo "moving to ai" && cd /build/find3/server/ai  && python3 -m pip install -r requirements.txt && \
-	echo "moving ai" && mv /build/find3/server/ai /app/ai && \
+	echo "moving to find3" && cd /build/wryd-learn-server/server/main  && go build -v && \
+	echo "moving main" && mv /build/wryd-learn-server/server/main /app/main && \
+	echo "moving to ai" && cd /build/wryd-learn-server/server/ai  && python3 -m pip install -r requirements.txt && \
+	echo "moving ai" && mv /build/wryd-learn-server/server/ai /app/ai && \
 	echo "removing go srces" && rm -rf /usr/local/work/src && \
 	echo "purging packages" && apt-get remove -y --auto-remove git libc6-dev pkg-config g++ gcc && \
 	echo "autoclean" && apt-get autoclean && \
