@@ -46,7 +46,7 @@ RUN python3 -m pip install Cython --install-option="--no-cython-compile" && \
 	export PATH="/usr/local/go/bin:$PATH"; \
 	go version && \
 	mkdir /build && cd /build && \
-	git clone https://github.com/wryd/wryd-learn-server && \
+	git clone https://github.com/wryd-live/wryd-learn-server && \
 	mkdir /data && \
 	mkdir /app && \
 	echo '#!/bin/bash\n\
