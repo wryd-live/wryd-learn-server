@@ -13,11 +13,11 @@ import (
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
+	"github.com/schollz/utils"
 	"github.com/wryd-live/wryd-learn-server/server/main/src/api"
 	"github.com/wryd-live/wryd-learn-server/server/main/src/database"
 	"github.com/wryd-live/wryd-learn-server/server/main/src/models"
 	"github.com/wryd-live/wryd-learn-server/server/main/src/mqtt"
-	"github.com/schollz/utils"
 )
 
 // Port defines the public port
@@ -65,7 +65,7 @@ func Run() (err error) {
 			c.Redirect(http.StatusMovedPermanently, "/view/dashboard/"+family)
 		} else {
 			c.HTML(http.StatusOK, "login.tmpl", gin.H{
-				"Message": template.HTML(fmt.Sprintf(`Family '%s' does not exist. Follow <a href="https://www.internalpositioning.com/doc/tracking_your_phone.md" target="_blank">these instructions</a> to get started.`, family)),
+				"Message": template.HTML(fmt.Sprintf(`Family '%s' does not exist. Follow the instructions properly</a> to get started.`, family)),
 			})
 		}
 
